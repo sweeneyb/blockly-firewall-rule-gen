@@ -27,7 +27,7 @@ function App() {
           {
             kind: "block",
             type: "logic_compare",
-          },
+          }
         ],
       },
       {
@@ -52,8 +52,20 @@ function App() {
         contents: [
           {
             kind: "block",
-            type: "new_firewall_rule",
-          }
+            type: "firewall_rule",
+          },
+          {
+            kind: "block",
+            type: "host",
+          },
+          {
+            kind: "block",
+            type: "application",
+          },
+          {
+            kind: "block",
+            type: "text",
+          },
         ],
       },
     ]
