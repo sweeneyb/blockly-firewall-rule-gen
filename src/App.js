@@ -10,7 +10,7 @@ function App() {
   const [code, setCode] = useState("");
 
   const initialXml =
-    '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
+    '<xml xmlns="https://developers.google.com/blockly/xml"><block type="firewall_rule" id="@.gb4,#Dgg@o|gTQz_h:" x="450" y="310"><field name="Name">Rule Name</field></block></xml>';
 
   const toolbox = {
     kind: "categoryToolbox",
@@ -47,7 +47,7 @@ function App() {
       },
       {
         kind: "category",
-        name: "Custom",
+        name: "Network Rules",
         colour: "#5CA699",
         contents: [
           {
@@ -75,6 +75,11 @@ function App() {
     const code = Blockly.JavaScript.workspaceToCode(workspace)
     setCode(code);
   }
+
+  function xmlChanged(xml) {
+    console.log(xml)
+    setXml(xml)
+  }
   return (
     <div className="App">
       hi
@@ -91,7 +96,7 @@ function App() {
           },
         }}
         onWorkspaceChange={workspaceChanged}
-        onXmlChange={setXml}
+        onXmlChange={xmlChanged}
       />
       <textarea
         id="code"
