@@ -1,4 +1,24 @@
-# Getting Started with Create React App
+# Custom Blocks in Blockly to create firewall rules
+
+Opening firewall rules is not something I do everyday.  The rule structure tends to be really specific to the type of firewall in use, which means I learn the syntax once every year or two.  It takes me a couple of days to get the concepts and how they map to syntax (different network segments have different rules about what you can do, and what's valid in that context).  My colleagues go through this too.  
+
+This repo is a short weekend test to see if I could codify a set of rules into a less-code system.  While the types are made up, I hope this serves as an example of how one might use something like Blockly to make a tool that a) implicitly documents the allowed rules and b) generates the code for the user (possibly to be modified later). 
+
+## Current state
+1. You can have multiple rules.  Each will be independent
+1. Either an "application" or a "hostname" can be added to the "firewall rule".  This is a primitive type system. Things will render differently based on that.
+1. I understand a bit more about custom blocks.  This was the main hurdle.
+
+## Future enhancements
+
+1. Rules can take a source into account.  They should also narrow what a rule allows access to.
+1. Build a generator instead of using javascript to log my text syntax to a console. 
+1. Integrate acorn to parse/run the javascript to render the firewall rule lines out (which is redundant to the point above, but I'm learning)
+1. Change connector shapes to make things more intuitive
+
+![Alt text](screen.png?raw=true "Title")
+
+# Built with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,58 +33,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
