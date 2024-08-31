@@ -74,6 +74,11 @@ function App() {
   function workspaceChanged(workspace) {
     const code = Blockly.JavaScript.workspaceToCode(workspace)
     setCode(code);
+    try {
+      eval(code);
+    } catch (e) {
+      // alert(e);
+    }
   }
 
   function xmlChanged(xml) {
