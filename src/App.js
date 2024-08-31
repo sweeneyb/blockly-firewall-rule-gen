@@ -8,6 +8,7 @@ import "./customBlocks/networks";
 function App() {
   const [xml, setXml] = useState("");
   const [code, setCode] = useState("");
+  const [ruleSet, setRuleSet] = useState("");
 
   const initialXml =
     '<xml xmlns="https://developers.google.com/blockly/xml"><block type="firewall_rule" id="@.gb4,#Dgg@o|gTQz_h:" x="450" y="310"><field name="Name">Rule Name</field></block></xml>';
@@ -76,6 +77,19 @@ function App() {
     setCode(code);
     try {
       eval(code);
+
+      console.oldLog = console.log;
+      var result = ""
+      console.log = function(value)
+      {
+          // console.oldLog(value);
+          result += value;
+      };
+
+      const output = eval(code);
+      console.oldLog("total result: ", result)
+      setRuleSet(result)
+      console.log = console.oldLog
     } catch (e) {
       // alert(e);
     }
@@ -107,6 +121,12 @@ function App() {
         id="code"
         style={{ height: "200px", width: "400px" }}
         value={code}
+        readOnly
+      ></textarea>
+      <textarea
+        id="ruleSet"
+        style={{ height: "200px", width: "400px" }}
+        value={ruleSet}
         readOnly
       ></textarea>
     </div>
