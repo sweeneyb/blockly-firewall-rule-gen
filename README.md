@@ -17,6 +17,7 @@ This repo is a short weekend test to see if I could codify a set of rules into a
 1. Rules can take a source into account.  They should also narrow what a rule allows access to.
 1. Integrate acorn to parse/run the javascript to render the firewall rule lines out (which is redundant to the point above, but I'm learning)
 1. Change connector shapes to make things more intuitive
+1. Connect to an actual, open source firewall product as a demo for lower-code people to generate rules for their applications
 
 
 
