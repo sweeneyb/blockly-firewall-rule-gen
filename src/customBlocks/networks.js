@@ -54,7 +54,7 @@ Blockly.JavaScript['firewall_rule'] = function (block) {
     var statements_content = Blockly.JavaScript.statementToCode(block, 'VALUE');
     // TODO: Assemble Python into code variable.
     // var code = 'let ' + text_name + '= foo' + statements_content + '\n';
-    var code = "console.log('ALLOW FROM "+statements_content+"')"
+    var code = "console.log('ALLOW FROM "+statements_content+"\\n')"
     return code;
 };
 

@@ -14,7 +14,7 @@ This repo is a short weekend test to see if I could codify a set of rules into a
 ## Future enhancements
 
 1. Rules can take a source into account.  They should also narrow what a rule allows access to.
-1. Build a generator instead of using javascript to log my text syntax to a console. 
+1. ~~ Build a generator instead of using javascript to log my text syntax to a console. ~~ The second textarea has the rendered rule output.
 1. Integrate acorn to parse/run the javascript to render the firewall rule lines out (which is redundant to the point above, but I'm learning)
 1. Change connector shapes to make things more intuitive
 
